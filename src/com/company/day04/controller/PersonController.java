@@ -22,11 +22,24 @@ public class PersonController {
 
         Scanner scanner = new Scanner(System.in);
 
-        Integer pasirinkimas= null;
+        Integer pasirinkimas = null;
         do {
             terminal.showMenu();
             pasirinkimas = produceInput(scanner);
-
+            switch(pasirinkimas){
+                case 0:
+                    return;
+                case 1:
+                    showAllEntries();
+                    break;
+                case 5:
+                    try {
+                        terminal.showPerson(personList.getTallestPerson());
+                    } catch (Exception exception) {
+                        System.out.println("Sarasas tuscias, reikia nuskaityti duomenis");
+                    }
+                    break;
+            }
         } while (pasirinkimas != 0);
 
     }
