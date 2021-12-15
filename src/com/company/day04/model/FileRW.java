@@ -26,7 +26,7 @@ public class FileRW {
         PersonVO result = new PersonVO();
 
         String eilute = scanner.nextLine();
-        String[] exploded = eilute.split("|");
+        String[] exploded = eilute.split("\\|");
 
         result.setName(exploded[0]);
         try {
